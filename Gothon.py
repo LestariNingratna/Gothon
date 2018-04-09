@@ -9,8 +9,8 @@ class Scene(object):
 		
 		
 class Engine(object):
-
-	def __init__(self,scene_map):
+	
+	def __init__(self, scene_map):
 		self.scene_map = scene_map
 		
 	def play(self):
@@ -78,9 +78,6 @@ class CentralCorridor(Scene):
 		else:
 			print "DOES NOT COMPUTE!"
 			return 'central_corridor'
-
-	def enter(self):
-		pass
 		
 class LaserWeaponArmory(Scene):
 
@@ -181,13 +178,11 @@ class EscapePod(Scene):
 		
 class Map(object):
 
-	scenes = [
-		'central_corridor': CentralCorridor(),
-		'laser_weapon_armory': LaserWeaponArmory(),
-		'the_bridge': TheBridge(),
-		'escape_pod': EscapePod(),
-		'death': Death()
-	]
+	scenes = {'central_corridor' : CentralCorridor(),
+		'laser_weapon_armory' : LaserWeaponArmory(),
+		'the_bridge' : TheBridge(),
+		'escape_pod' : EscapePod(),
+		'death' : Death()}
 	
 	def __init__(self,start_scene):
 		self.start_scene = start_scene
